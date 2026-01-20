@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\TaxProductStorage\Communication\Plugin\Publisher\Synchronization;
+namespace SprykerTest\Zed\TaxProductStorage\Communication\Plugin\Synchronization;
 
 use Codeception\Test\Unit;
 use Spryker\Client\Kernel\Container;
@@ -21,7 +21,6 @@ use SprykerTest\Zed\TaxProductStorage\TaxProductStorageCommunicationTester;
  * @group TaxProductStorage
  * @group Communication
  * @group Plugin
- * @group Publisher
  * @group Synchronization
  * @group TaxProductSynchronizationDataBulkRepositoryPluginTest
  * Add your own group annotations below this line
@@ -33,16 +32,14 @@ class TaxProductSynchronizationDataBulkRepositoryPluginTest extends Unit
      */
     protected TaxProductStorageCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
-        $this->tester->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container): array {
+        $this->tester->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container) {
             return [
                 $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
+                $container->getLocator()->symfonyMessenger()->client()->createQueueAdapter(),
             ];
         });
     }
