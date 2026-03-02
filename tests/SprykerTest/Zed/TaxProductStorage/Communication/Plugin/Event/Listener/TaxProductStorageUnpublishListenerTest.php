@@ -52,9 +52,6 @@ class TaxProductStorageUnpublishListenerTest extends Unit
      */
     protected $productAbstractTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -71,9 +68,6 @@ class TaxProductStorageUnpublishListenerTest extends Unit
         $this->productAbstractTransfer = $this->tester->haveProductAbstract();
     }
 
-    /**
-     * @return void
-     */
     public function testHandleBulkTaxProductStorageEntityCanBeUnpublished(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class TaxProductStorageUnpublishListenerTest extends Unit
         $this->assertCount(0, $taxProductStorageEntities);
     }
 
-    /**
-     * @return void
-     */
     protected function saveTaxProductStorageEntity(): void
     {
         $taxProductStorageTransfer = (new TaxProductStorageTransfer())

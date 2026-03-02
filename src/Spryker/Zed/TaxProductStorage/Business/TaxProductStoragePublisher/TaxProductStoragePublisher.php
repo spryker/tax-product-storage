@@ -22,10 +22,6 @@ class TaxProductStoragePublisher implements TaxProductStoragePublisherInterface
      */
     protected $taxProductStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\TaxProductStorage\Persistence\TaxProductStorageRepositoryInterface $taxProductStorageRepository
-     * @param \Spryker\Zed\TaxProductStorage\Persistence\TaxProductStorageEntityManagerInterface $taxProductStorageEntityManager
-     */
     public function __construct(
         TaxProductStorageRepositoryInterface $taxProductStorageRepository,
         TaxProductStorageEntityManagerInterface $taxProductStorageEntityManager

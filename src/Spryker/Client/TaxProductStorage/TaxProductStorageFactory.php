@@ -15,9 +15,6 @@ use Spryker\Client\TaxProductStorage\Storage\TaxProductStorageReaderInterface;
 
 class TaxProductStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\TaxProductStorage\Storage\TaxProductStorageReaderInterface
-     */
     public function createTaxProductStorageReader(): TaxProductStorageReaderInterface
     {
         return new TaxProductStorageReader(
@@ -26,17 +23,11 @@ class TaxProductStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\TaxProductStorage\Dependency\Client\TaxProductStorageToStorageClientInterface
-     */
     public function getStorageClient(): TaxProductStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(TaxProductStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\TaxProductStorage\Dependency\Service\TaxProductStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): TaxProductStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(TaxProductStorageDependencyProvider::SERVICE_SYNCHRONIZATION);

@@ -44,9 +44,6 @@ class TaxProductSynchronizationDataBulkRepositoryPluginTest extends Unit
         });
     }
 
-    /**
-     * @return void
-     */
     public function testGetDataReturnsEmptyArrayWithInvalidIds(): void
     {
         // Act
@@ -60,9 +57,6 @@ class TaxProductSynchronizationDataBulkRepositoryPluginTest extends Unit
         $this->assertEmpty($synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetDataReturnsDataWithoutIds(): void
     {
         // Arrange

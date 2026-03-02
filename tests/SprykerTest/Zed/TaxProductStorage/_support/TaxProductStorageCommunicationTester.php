@@ -35,17 +35,11 @@ class TaxProductStorageCommunicationTester extends Actor
      */
     public const TEST_INVALID_ID = 999999999;
 
-    /**
-     * @return void
-     */
     public function assertStorageDatabaseTableIsEmpty(): void
     {
         SpyTaxProductStorageQuery::create()->deleteAll();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ProductAbstractTransfer
-     */
     public function haveProductAbstractTaxStorage(): ProductAbstractTransfer
     {
         $productAbstract = $this->haveProductAbstract();

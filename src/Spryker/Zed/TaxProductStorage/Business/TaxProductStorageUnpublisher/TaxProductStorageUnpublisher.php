@@ -16,9 +16,6 @@ class TaxProductStorageUnpublisher implements TaxProductStorageUnpublisherInterf
      */
     protected $taxProductStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\TaxProductStorage\Persistence\TaxProductStorageEntityManagerInterface $taxProductStorageEntityManager
-     */
     public function __construct(TaxProductStorageEntityManagerInterface $taxProductStorageEntityManager)
     {
         $this->taxProductStorageEntityManager = $taxProductStorageEntityManager;

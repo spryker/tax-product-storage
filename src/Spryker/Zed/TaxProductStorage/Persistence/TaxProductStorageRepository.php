@@ -142,12 +142,6 @@ class TaxProductStorageRepository extends AbstractRepository implements TaxProdu
             );
     }
 
-    /**
-     * @param \Orm\Zed\Product\Persistence\SpyProductAbstractQuery $productAbstractQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\Product\Persistence\SpyProductAbstractQuery
-     */
     protected function applyProductAbstractPagination(
         SpyProductAbstractQuery $productAbstractQuery,
         PaginationTransfer $paginationTransfer

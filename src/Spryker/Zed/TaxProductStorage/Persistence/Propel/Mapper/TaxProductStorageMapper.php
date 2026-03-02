@@ -73,12 +73,6 @@ class TaxProductStorageMapper
         return $synchronizationDataTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\Product\Persistence\SpyProductAbstract $spyProductAbstract
-     * @param \Generated\Shared\Transfer\TaxProductStorageTransfer $taxProductStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxProductStorageTransfer
-     */
     protected function mapSpyProductAbstractToTaxProductStorageTransfer(
         SpyProductAbstract $spyProductAbstract,
         TaxProductStorageTransfer $taxProductStorageTransfer

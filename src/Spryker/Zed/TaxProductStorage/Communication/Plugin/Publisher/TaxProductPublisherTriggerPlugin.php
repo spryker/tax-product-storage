@@ -85,12 +85,6 @@ class TaxProductPublisherTriggerPlugin extends AbstractPlugin implements Publish
         return static::COL_ID_PRODUCT_ABSTRACT;
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractCriteriaTransfer
-     */
     protected function createProductAbstractCriteria(int $offset, int $limit): ProductAbstractCriteriaTransfer
     {
         return (new ProductAbstractCriteriaTransfer())

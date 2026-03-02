@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\TaxProductStorageTransfer;
 
 interface TaxProductStorageReaderInterface
 {
-    /**
-     * @param string $productAbstractSku
-     *
-     * @return \Generated\Shared\Transfer\TaxProductStorageTransfer|null
-     */
     public function findTaxProductStorageByProductAbstractSku(string $productAbstractSku): ?TaxProductStorageTransfer;
 }

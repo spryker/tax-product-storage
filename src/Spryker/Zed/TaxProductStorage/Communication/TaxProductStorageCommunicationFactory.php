@@ -19,9 +19,6 @@ use Spryker\Zed\TaxProductStorage\TaxProductStorageDependencyProvider;
  */
 class TaxProductStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\TaxProductStorage\Dependency\Facade\TaxProductStorageToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): TaxProductStorageToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(TaxProductStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);

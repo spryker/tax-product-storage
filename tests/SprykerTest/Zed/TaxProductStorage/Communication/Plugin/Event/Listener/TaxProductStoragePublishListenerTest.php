@@ -50,9 +50,6 @@ class TaxProductStoragePublishListenerTest extends Unit
      */
     protected $productAbstractTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -69,9 +66,6 @@ class TaxProductStoragePublishListenerTest extends Unit
         $this->productAbstractTransfer = $this->tester->haveProductAbstract();
     }
 
-    /**
-     * @return void
-     */
     public function testHandleBulkTaxProductStorageEntityCanBePublished(): void
     {
         // Arrange

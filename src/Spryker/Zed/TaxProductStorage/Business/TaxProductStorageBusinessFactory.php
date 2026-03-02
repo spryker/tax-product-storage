@@ -20,9 +20,6 @@ use Spryker\Zed\TaxProductStorage\Business\TaxProductStorageUnpublisher\TaxProdu
  */
 class TaxProductStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\TaxProductStorage\Business\TaxProductStoragePublisher\TaxProductStoragePublisherInterface
-     */
     public function createTaxProductStoragePublisher(): TaxProductStoragePublisherInterface
     {
         return new TaxProductStoragePublisher(
@@ -31,9 +28,6 @@ class TaxProductStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\TaxProductStorage\Business\TaxProductStorageUnpublisher\TaxProductStorageUnpublisherInterface
-     */
     public function createTaxProductStorageUnpublisher(): TaxProductStorageUnpublisherInterface
     {
         return new TaxProductStorageUnpublisher(

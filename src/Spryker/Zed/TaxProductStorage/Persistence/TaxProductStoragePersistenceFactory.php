@@ -20,25 +20,16 @@ use Spryker\Zed\TaxProductStorage\TaxProductStorageDependencyProvider;
  */
 class TaxProductStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\TaxProductStorage\Persistence\SpyTaxProductStorageQuery
-     */
     public function createTaxProductStorageQuery(): SpyTaxProductStorageQuery
     {
         return SpyTaxProductStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductAbstractQuery
-     */
     public function getProductAbstractQuery(): SpyProductAbstractQuery
     {
         return $this->getProvidedDependency(TaxProductStorageDependencyProvider::PROPEL_QUERY_PRODUCT_ABSTRACT);
     }
 
-    /**
-     * @return \Spryker\Zed\TaxProductStorage\Persistence\Propel\Mapper\TaxProductStorageMapper
-     */
     public function createTaxProductStorageMapper(): TaxProductStorageMapper
     {
         return new TaxProductStorageMapper();

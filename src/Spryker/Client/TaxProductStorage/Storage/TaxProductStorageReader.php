@@ -25,10 +25,6 @@ class TaxProductStorageReader implements TaxProductStorageReaderInterface
      */
     protected $synchronizationService;
 
-    /**
-     * @param \Spryker\Client\TaxProductStorage\Dependency\Client\TaxProductStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\TaxProductStorage\Dependency\Service\TaxProductStorageToSynchronizationServiceInterface $synchronizationService
-     */
     public function __construct(
         TaxProductStorageToStorageClientInterface $storageClient,
         TaxProductStorageToSynchronizationServiceInterface $synchronizationService
@@ -37,11 +33,6 @@ class TaxProductStorageReader implements TaxProductStorageReaderInterface
         $this->synchronizationService = $synchronizationService;
     }
 
-    /**
-     * @param string $productAbstractSku
-     *
-     * @return \Generated\Shared\Transfer\TaxProductStorageTransfer|null
-     */
     public function findTaxProductStorageByProductAbstractSku(string $productAbstractSku): ?TaxProductStorageTransfer
     {
         $storageKey = $this->generateKey($productAbstractSku);
@@ -54,11 +45,6 @@ class TaxProductStorageReader implements TaxProductStorageReaderInterface
         return (new TaxProductStorageTransfer())->fromArray($taxProductStorageData, true);
     }
 
-    /**
-     * @param string $productAbstractSku
-     *
-     * @return string
-     */
     protected function generateKey(string $productAbstractSku): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

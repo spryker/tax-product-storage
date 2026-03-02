@@ -46,10 +46,5 @@ interface TaxProductStorageRepositoryInterface
      */
     public function getAllSynchronizationDataTransfersFromTaxProductStorages(): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractCriteriaTransfer $productAbstractCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractCollectionTransfer
-     */
     public function getProductAbstractCollection(ProductAbstractCriteriaTransfer $productAbstractCriteriaTransfer): ProductAbstractCollectionTransfer;
 }

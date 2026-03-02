@@ -30,9 +30,6 @@ class TaxProductPublisherTriggerPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testTaxProductPublisherTriggerPluginShouldReturnDataWithOffsetAndLimit(): void
     {
         // Arrange
