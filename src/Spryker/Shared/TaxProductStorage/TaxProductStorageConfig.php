@@ -60,4 +60,14 @@ class TaxProductStorageConfig extends AbstractSharedConfig
      * @var string
      */
     public const TAX_PRODUCT_PUBLISH = 'TaxProduct.tax_product.publish';
+
+    /**
+     * Specification:
+     * - Queue name used for tax product publish events.
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const PUBLISH_TAX_PRODUCT_QUEUE = 'publish.tax_product';
 }
