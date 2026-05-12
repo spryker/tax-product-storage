@@ -9,12 +9,15 @@ namespace Spryker\Zed\TaxProductStorage\Persistence;
 
 use Orm\Zed\TaxProductStorage\Persistence\SpyTaxProductStorage;
 use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
+use Spryker\Zed\Propel\Persistence\BatchProcessor\ActiveRecordBatchProcessorTrait;
 
 /**
  * @method \Spryker\Zed\TaxProductStorage\Persistence\TaxProductStoragePersistenceFactory getFactory()
  */
 class TaxProductStorageEntityManager extends AbstractEntityManager implements TaxProductStorageEntityManagerInterface
 {
+    use ActiveRecordBatchProcessorTrait;
+
     /**
      * @var string
      */
@@ -50,9 +53,11 @@ class TaxProductStorageEntityManager extends AbstractEntityManager implements Ta
                     ->setFkProductAbstract($taxProductStorageTransfer->getIdProductAbstract());
             $spyTaxProductStorage
                 ->setSku($taxProductStorageTransfer->getSku())
-                ->setData($taxProductStorageTransfer->toArray())
-                ->save();
+                ->setData($taxProductStorageTransfer->toArray());
+            $this->persist($spyTaxProductStorage);
         }
+
+        $this->commit();
     }
 
     /**
